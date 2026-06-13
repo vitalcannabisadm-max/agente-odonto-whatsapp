@@ -67,25 +67,44 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 flex flex-col items-center justify-center p-4 gap-4">
-      <header className="text-center max-w-md">
-        <div className="flex items-center justify-center gap-1.5 mb-3 text-slate-700">
-          <span className="text-lg">🥷</span>
-          <span className="text-sm font-bold tracking-wide">
-            Ninja<span className="text-emerald-600">Site</span>
+    <div className="min-h-screen relative overflow-hidden bg-black flex flex-col items-center justify-center p-4 gap-6">
+      {/* Background glow effects */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -top-32 -left-32 w-96 h-96 bg-violet-600/25 rounded-full blur-3xl" />
+        <div className="absolute top-1/3 -right-32 w-96 h-96 bg-violet-500/15 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-violet-700/15 rounded-full blur-3xl" />
+        <div
+          className="absolute inset-0 opacity-[0.05]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
+            backgroundSize: "48px 48px",
+          }}
+        />
+      </div>
+
+      <header className="text-center max-w-md relative z-10">
+        <div className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full border border-violet-500/30 bg-violet-500/10 backdrop-blur-sm">
+          <span className="text-base font-extrabold tracking-tight">
+            <span className="text-white">Ninja</span>
+            <span className="text-violet-400">Sites</span>
           </span>
         </div>
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-medium mb-2">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-violet-300 text-xs font-medium mb-3">
           <Sparkles className="w-3 h-3" /> Demo · Agente de IA para WhatsApp
         </div>
-        <h1 className="text-2xl font-bold text-slate-800">Clínica Sorriso Premium</h1>
-        <p className="text-sm text-slate-600 mt-1">
+        <h1 className="text-2xl md:text-3xl font-bold text-white">
+          Clínica <span className="text-violet-400">Sorriso Premium</span>
+        </h1>
+        <p className="text-sm text-neutral-400 mt-2 leading-relaxed">
           Converse com a Sofia, recepcionista virtual. Ela qualifica, tira dúvidas e agenda sua avaliação.
         </p>
       </header>
 
       {/* Phone frame */}
-      <div className="w-full max-w-[400px] h-[680px] bg-black rounded-[2.5rem] p-3 shadow-2xl">
+      <div className="relative z-10">
+        <div className="absolute -inset-4 bg-violet-600/30 rounded-[3rem] blur-2xl" />
+        <div className="relative w-full max-w-[400px] h-[680px] bg-black rounded-[2.5rem] p-3 shadow-2xl ring-1 ring-white/10">
         <div className="w-full h-full bg-[#0b141a] rounded-[2rem] overflow-hidden flex flex-col">
           {/* Header */}
           <div className="bg-[#202c33] text-white px-3 py-2.5 flex items-center gap-3 shrink-0">
@@ -165,15 +184,20 @@ export default function App() {
             </button>
           </div>
         </div>
+        </div>
       </div>
 
-      <footer className="text-xs text-slate-500 text-center max-w-md space-y-1">
-        <p>
+      <footer className="text-xs text-neutral-400 text-center max-w-md space-y-2 relative z-10">
+        <p className="leading-relaxed">
           Demonstração interativa. A Sofia consegue qualificar pacientes, informar valores, oferecer horários reais e
           confirmar agendamentos.
         </p>
-        <p className="text-slate-400">
-          Feito com 🥷 por <span className="font-semibold text-slate-500">NinjaSite</span>
+        <p className="flex items-center justify-center gap-1.5 text-neutral-500">
+          Feito por{" "}
+          <span className="font-extrabold tracking-tight">
+            <span className="text-white">Ninja</span>
+            <span className="text-violet-400">Sites</span>
+          </span>
         </p>
       </footer>
     </div>
