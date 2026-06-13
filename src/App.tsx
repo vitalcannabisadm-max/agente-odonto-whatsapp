@@ -69,6 +69,12 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 flex flex-col items-center justify-center p-4 gap-4">
       <header className="text-center max-w-md">
+        <div className="flex items-center justify-center gap-1.5 mb-3 text-slate-700">
+          <span className="text-lg">🥷</span>
+          <span className="text-sm font-bold tracking-wide">
+            Ninja<span className="text-emerald-600">Site</span>
+          </span>
+        </div>
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-medium mb-2">
           <Sparkles className="w-3 h-3" /> Demo · Agente de IA para WhatsApp
         </div>
@@ -161,9 +167,14 @@ export default function App() {
         </div>
       </div>
 
-      <footer className="text-xs text-slate-500 text-center max-w-md">
-        Demonstração interativa. A Sofia consegue qualificar pacientes, informar valores, oferecer horários reais e
-        confirmar agendamentos.
+      <footer className="text-xs text-slate-500 text-center max-w-md space-y-1">
+        <p>
+          Demonstração interativa. A Sofia consegue qualificar pacientes, informar valores, oferecer horários reais e
+          confirmar agendamentos.
+        </p>
+        <p className="text-slate-400">
+          Feito com 🥷 por <span className="font-semibold text-slate-500">NinjaSite</span>
+        </p>
       </footer>
     </div>
   );
